@@ -33,6 +33,30 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Stili per il carosello interno delle foto */
+        .inner-swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .inner-swiper .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+        }
+        .inner-swiper .swiper-pagination-bullet-active {
+            background: #D4AF37;
+            opacity: 1;
+        }
+        .inner-swiper .swiper-button-next,
+        .inner-swiper .swiper-button-prev {
+            color: white;
+            transform: scale(0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .group:hover .inner-swiper .swiper-button-next,
+        .group:hover .inner-swiper .swiper-button-prev {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-white text-brand-black overflow-x-hidden">
@@ -102,8 +126,22 @@
                     <div class="swiper-slide h-auto group">
                         <div class="bg-neutral-900 border border-white/5 group-hover:border-brand-gold/50 transition-all duration-500 h-full flex flex-col justify-between">
                             <div class="relative overflow-hidden aspect-[4/3]">
-                                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800" alt="Appartamento Rugiada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                                <div class="absolute top-4 left-4 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
+                                
+                                <div class="swiper inner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="RUGIADASOGGIORNO.png" alt="Rugiada Soggiorno" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="intestinaleSOGGIORNO2.png" alt="Rugiada Soggiorno 2" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="giumentaCamera.png" alt="Rugiada Camera" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="infermieraCucina.png" alt="Rugiada Cucina" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="protezioneBAGNO.png" alt="Rugiada Bagno" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="infermieraCameretta2.png" alt="Rugiada Cameretta" class="w-full h-full object-cover"></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+
+                                <div class="absolute top-4 left-4 z-10 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
                                     Fronte Mare
                                 </div>
                             </div>
@@ -125,8 +163,22 @@
                     <div class="swiper-slide h-auto group">
                         <div class="bg-neutral-900 border border-white/5 group-hover:border-brand-gold/50 transition-all duration-500 h-full flex flex-col justify-between">
                             <div class="relative overflow-hidden aspect-[4/3]">
-                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800" alt="Appartamento Ulivi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                                <div class="absolute top-4 left-4 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
+                                
+                                <div class="swiper inner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="uliviSalone.png" alt="Ulivi Salone" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="uliviMatrimoniale.png" alt="Ulivi Matrimoniale" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="uliviMatrimoniale2.png" alt="Ulivi Matrimoniale 2" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="uliviCucina.png" alt="Ulivi Cucina" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="ulivi%20Bagno_camera.png" alt="Ulivi Bagno" class="w-full h-full object-cover"></div>
+                                        <div class="swiper-slide"><img src="uliviBagno_camera2.png" alt="Ulivi Bagno 2" class="w-full h-full object-cover"></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+
+                                <div class="absolute top-4 left-4 z-10 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
                                     Stazione Lido Nord
                                 </div>
                             </div>
@@ -198,11 +250,10 @@
             }
         };
 
-        // Inizializza il Carosello degli Appartamenti
-        const swiper = new Swiper('.appartamenti-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: false, // Disattivato perché abbiamo solo 2 appartamenti per ora
+        // Inizializza gli Slider Interni delle foto PRIMA di quello principale
+        const innerSwipers = new Swiper('.inner-swiper', {
+            nested: true, // Questo è fondamentale per non far bloccare lo slider principale!
+            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -211,9 +262,24 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+        });
+
+        // Inizializza il Carosello Principale degli Appartamenti
+        const mainSwiper = new Swiper('.appartamenti-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: false,
+            pagination: {
+                el: '.appartamenti-swiper > .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.appartamenti-swiper > .swiper-button-next',
+                prevEl: '.appartamenti-swiper > .swiper-button-prev',
+            },
             breakpoints: {
                 768: {
-                    slidesPerView: 2, // Su PC/Tablet mostra 2 card affiancate
+                    slidesPerView: 2,
                 }
             }
         });
