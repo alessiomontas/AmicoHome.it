@@ -252,18 +252,20 @@
             }
         };
 
-        // Inizializza gli Slider Interni delle foto PRIMA di quello principale
-        const innerSwipers = new Swiper('.inner-swiper', {
-            nested: true, // Questo è fondamentale per non far bloccare lo slider principale!
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+        // SOLUZIONE APPLICATA: Isoliamo ogni slider interno in modo che non litighino tra loro!
+        document.querySelectorAll('.inner-swiper').forEach(function(slider) {
+            new Swiper(slider, {
+                nested: true, 
+                loop: true,
+                pagination: {
+                    el: slider.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: slider.querySelector('.swiper-button-next'),
+                    prevEl: slider.querySelector('.swiper-button-prev'),
+                },
+            });
         });
 
         // Inizializza il Carosello Principale degli Appartamenti
