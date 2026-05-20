@@ -6,7 +6,7 @@
     <title>AmicoHome | Roma Luxury Stays & Property Management</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -58,9 +58,9 @@
             opacity: 1;
         }
         
-        /* Custom Input Styles */
+        /* Custom Input Styles - AGGIORNATI PER ESSERE SCURI, GRANDI E LEGGIBILI */
         .form-input {
-            @apply w-full bg-transparent border-b border-gray-600 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors duration-300 placeholder-gray-500 font-light;
+            @apply w-full bg-neutral-800 border border-neutral-700 rounded-md p-4 text-white text-base focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all duration-300 placeholder-gray-500 font-light;
         }
     </style>
 </head>
@@ -75,7 +75,7 @@
                 <a href="#chi-siamo" class="text-gray-300 hover:text-brand-gold transition-colors text-xs uppercase tracking-widest">Chi Siamo</a>
                 <a href="#appartamenti" class="text-gray-300 hover:text-brand-gold transition-colors text-xs uppercase tracking-widest">Appartamenti</a>
                 <a href="#proprietari" class="text-gray-300 hover:text-brand-gold transition-colors text-xs uppercase tracking-widest">Proprietari</a>
-                <a href="#contatti" class="bg-brand-gold text-brand-black px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Contatti</a>
+                <a href="#contatti" class="bg-brand-gold text-brand-black px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Valuta Immobile</a>
             </nav>
         </div>
     </header>
@@ -86,7 +86,7 @@
             <h1 class="text-5xl md:text-8xl font-serif text-white mb-6">L'ospitalità <br><span class="text-gradient-gold italic">diventa arte.</span></h1>
             <p class="text-brand-goldLight text-lg md:text-2xl font-light tracking-widest uppercase mb-10">Luxury Apartments & Property Management in Roma</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#appartamenti" class="px-10 py-4 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all uppercase tracking-tighter font-bold">Prenota un Soggiorno</a>
+                <a href="#appartamenti" class="px-10 py-4 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all uppercase tracking-tighter font-bold">La Collezione</a>
                 <a href="#contatti" class="px-10 py-4 bg-white text-brand-black hover:bg-brand-gold transition-all uppercase tracking-tighter font-bold">Gestione Immobili</a>
             </div>
         </div>
@@ -160,8 +160,8 @@
                                         Un rifugio esclusivo affacciato direttamente sul mare. Svegliarsi con il suono delle onde e godersi tramonti mozzafiato sul litorale romano in spazi curati nei minimi dettagli.
                                     </p>
                                 </div>
-                                <a href="#contatti" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
-                                    Richiedi Preventivo
+                                <a href="#" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
+                                    Scopri su Airbnb
                                 </a>
                             </div>
                         </div>
@@ -195,8 +195,8 @@
                                         Eleganza contemporanea e massima connessione. Situato strategicamente, permette di raggiungere il centro di Roma in pochi minuti, offrendo un'oasi di pace al rientro.
                                     </p>
                                 </div>
-                                <a href="#contatti" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
-                                    Richiedi Preventivo
+                                <a href="#" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
+                                    Scopri su Airbnb
                                 </a>
                             </div>
                         </div>
@@ -241,48 +241,37 @@
         <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at center, #D4AF37 0%, transparent 50%);"></div>
         
         <div class="max-w-4xl mx-auto px-6 relative z-10" data-aos="fade-up">
-            <div class="bg-neutral-900 border border-brand-gold/30 p-8 md:p-14 shadow-2xl relative overflow-hidden">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Iniziamo un percorso insieme.</h2>
-                    <p class="text-gray-400 font-light">Compila il modulo per ricevere una valutazione gratuita del tuo immobile o per richiedere informazioni sui nostri soggiorni. Ti risponderemo entro 24 ore.</p>
+            <div class="bg-neutral-900 border border-brand-gold/30 p-8 md:p-14 shadow-2xl relative overflow-hidden rounded-xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Affidaci il tuo immobile.</h2>
+                    <p class="text-gray-400 font-light text-lg">Compila il modulo per ricevere una valutazione gratuita della tua proprietà. Scopri le reali potenzialità di guadagno senza alcuno stress.</p>
                 </div>
 
-                <form action="#" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
+                <form action="#" method="POST" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Nome e Cognome *</label>
-                            <input type="text" required class="form-input" placeholder="Mario Rossi">
+                            <label class="block text-brand-gold text-xs md:text-sm uppercase tracking-widest mb-3 font-bold">Nome e Cognome *</label>
+                            <input type="text" required class="form-input" placeholder="Es. Mario Rossi">
                         </div>
                         <div>
-                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Indirizzo E-mail *</label>
-                            <input type="email" required class="form-input" placeholder="mario@email.com">
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Numero di Telefono *</label>
-                            <input type="tel" required class="form-input" placeholder="+39 333 123 4567">
-                        </div>
-                        <div>
-                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Cosa desideri fare? *</label>
-                            <select required class="form-input bg-neutral-900 appearance-none cursor-pointer">
-                                <option value="" disabled selected>Seleziona un'opzione...</option>
-                                <option value="proprietario">Voglio affidarvi la gestione del mio immobile</option>
-                                <option value="ospite">Voglio prenotare un soggiorno in un appartamento</option>
-                                <option value="altro">Altre informazioni</option>
-                            </select>
+                            <label class="block text-brand-gold text-xs md:text-sm uppercase tracking-widest mb-3 font-bold">Indirizzo E-mail *</label>
+                            <input type="email" required class="form-input" placeholder="mario.rossi@email.com">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Parlaci del tuo immobile o delle tue date di viaggio</label>
-                        <textarea rows="4" class="form-input resize-none" placeholder="Es. Ho un trilocale a Ostia fronte mare / Vorrei prenotare Rugiada ad Agosto..."></textarea>
+                        <label class="block text-brand-gold text-xs md:text-sm uppercase tracking-widest mb-3 font-bold">Numero di Telefono *</label>
+                        <input type="tel" required class="form-input" placeholder="+39 333 123 4567">
                     </div>
 
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-brand-gold text-brand-black font-bold uppercase text-sm tracking-widest py-5 hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
-                            Invia Richiesta
+                    <div>
+                        <label class="block text-brand-gold text-xs md:text-sm uppercase tracking-widest mb-3 font-bold">Parlaci del tuo immobile *</label>
+                        <textarea rows="5" required class="form-input resize-none" placeholder="Inserisci la zona del tuo immobile e la tipologia (es. bilocale, trilocale, attico, ecc...)"></textarea>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-brand-gold text-brand-black font-bold uppercase text-base tracking-widest py-5 rounded hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
+                            Richiedi Valutazione Gratuita
                         </button>
                     </div>
                 </form>
