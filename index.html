@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmicoHome | Roma Luxury Stays</title>
+    <title>AmicoHome | Roma Luxury Stays & Property Management</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
@@ -57,6 +57,11 @@
         .group:hover .inner-swiper .swiper-button-prev {
             opacity: 1;
         }
+        
+        /* Custom Input Styles */
+        .form-input {
+            @apply w-full bg-transparent border-b border-gray-600 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors duration-300 placeholder-gray-500 font-light;
+        }
     </style>
 </head>
 <body class="bg-white text-brand-black overflow-x-hidden">
@@ -82,7 +87,7 @@
             <p class="text-brand-goldLight text-lg md:text-2xl font-light tracking-widest uppercase mb-10">Luxury Apartments & Property Management in Roma</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <a href="#appartamenti" class="px-10 py-4 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all uppercase tracking-tighter font-bold">Prenota un Soggiorno</a>
-                <a href="#proprietari" class="px-10 py-4 bg-white text-brand-black hover:bg-brand-gold transition-all uppercase tracking-tighter font-bold">Gestione Immobili</a>
+                <a href="#contatti" class="px-10 py-4 bg-white text-brand-black hover:bg-brand-gold transition-all uppercase tracking-tighter font-bold">Gestione Immobili</a>
             </div>
         </div>
     </section>
@@ -92,7 +97,6 @@
             
             <div class="relative" data-aos="fade-right">
                 <div class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold"></div>
-                
                 <img src="immagginepm.png" alt="Socio - AmicoHome" class="relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-700 object-cover shadow-2xl">
             </div>
 
@@ -129,7 +133,6 @@
                     <div class="swiper-slide h-auto group">
                         <div class="bg-neutral-900 border border-white/5 group-hover:border-brand-gold/50 transition-all duration-500 h-full flex flex-col justify-between">
                             <div class="relative overflow-hidden aspect-[4/3]">
-                                
                                 <div class="swiper inner-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide"><img src="RUGIADASOGGIORNO.png" alt="Rugiada Soggiorno" class="w-full h-full object-cover"></div>
@@ -145,7 +148,6 @@
                                     <div class="swiper-button-next"></div>
                                     <div class="swiper-button-prev"></div>
                                 </div>
-
                                 <div class="absolute top-4 left-4 z-10 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
                                     Fronte Mare
                                 </div>
@@ -158,8 +160,8 @@
                                         Un rifugio esclusivo affacciato direttamente sul mare. Svegliarsi con il suono delle onde e godersi tramonti mozzafiato sul litorale romano in spazi curati nei minimi dettagli.
                                     </p>
                                 </div>
-                                <a href="#" target="_blank" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
-                                    Prenota Ora
+                                <a href="#contatti" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
+                                    Richiedi Preventivo
                                 </a>
                             </div>
                         </div>
@@ -168,7 +170,6 @@
                     <div class="swiper-slide h-auto group">
                         <div class="bg-neutral-900 border border-white/5 group-hover:border-brand-gold/50 transition-all duration-500 h-full flex flex-col justify-between">
                             <div class="relative overflow-hidden aspect-[4/3]">
-                                
                                 <div class="swiper inner-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide"><img src="uliviSalone.png" alt="Ulivi Salone" class="w-full h-full object-cover"></div>
@@ -182,7 +183,6 @@
                                     <div class="swiper-button-next"></div>
                                     <div class="swiper-button-prev"></div>
                                 </div>
-
                                 <div class="absolute top-4 left-4 z-10 bg-brand-black/80 backdrop-blur-md text-brand-gold text-[10px] uppercase tracking-widest px-3 py-1 font-bold border border-brand-gold/30">
                                     Stazione Lido Nord
                                 </div>
@@ -195,8 +195,8 @@
                                         Eleganza contemporanea e massima connessione. Situato strategicamente, permette di raggiungere il centro di Roma in pochi minuti, offrendo un'oasi di pace al rientro.
                                     </p>
                                 </div>
-                                <a href="#" target="_blank" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
-                                    Prenota Ora
+                                <a href="#contatti" class="w-full block text-center bg-brand-gold text-brand-black font-bold uppercase text-xs tracking-widest py-4 hover:bg-white transition-all duration-300">
+                                    Richiedi Preventivo
                                 </a>
                             </div>
                         </div>
@@ -213,28 +213,95 @@
 
     <section id="proprietari" class="py-24 bg-white px-6">
         <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-3xl md:text-5xl font-serif mb-8 text-brand-black">Possiedi una seconda casa a Roma?</h2>
-            <p class="text-xl text-gray-600 mb-12 font-light">Affidaci la gestione e trasforma il tuo immobile in una rendita costante, senza muovere un dito. Pensiamo a tutto noi: burocrazia, marketing, ospiti.</p>
+            <h2 class="text-brand-gold uppercase tracking-[0.3em] text-xs mb-4 font-bold">Property Management</h2>
+            <h3 class="text-3xl md:text-5xl font-serif mb-8 text-brand-black">Possiedi una seconda casa a Roma o Litorale?</h3>
+            <p class="text-xl text-gray-600 mb-12 font-light">Affidaci la gestione e trasforma il tuo immobile in una rendita eccezionale e costante, senza muovere un dito. Pensiamo a tutto noi: burocrazia, marketing, pulizie e accoglienza ospiti.</p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-8 border border-gray-100 hover:border-brand-gold transition-all shadow-sm">
                     <div class="text-brand-gold mb-4 text-3xl">✦</div>
                     <h4 class="font-bold uppercase mb-2 text-sm tracking-widest">Massima Rendita</h4>
-                    <p class="text-gray-500 text-xs">Ottimizziamo i prezzi ogni giorno per garantirti il massimo profitto.</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Ottimizziamo i prezzi ogni giorno con software dinamici per garantirti il massimo profitto dal tuo immobile.</p>
                 </div>
                 <div class="p-8 border border-gray-100 hover:border-brand-gold transition-all shadow-sm">
                     <div class="text-brand-gold mb-4 text-3xl">✦</div>
                     <h4 class="font-bold uppercase mb-2 text-sm tracking-widest">Zero Stress</h4>
-                    <p class="text-gray-500 text-xs">Gestiamo check-in, pulizie e manutenzione 24/7.</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Dimentica le chiamate notturne. Gestiamo check-in, pulizie, pratiche in questura e manutenzione 24/7.</p>
                 </div>
                 <div class="p-8 border border-gray-100 hover:border-brand-gold transition-all shadow-sm">
                     <div class="text-brand-gold mb-4 text-3xl">✦</div>
                     <h4 class="font-bold uppercase mb-2 text-sm tracking-widest">Qualità Superhost</h4>
-                    <p class="text-gray-500 text-xs">Sfrutta la nostra reputazione per scalare le classifiche di Airbnb.</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Sfrutta il nostro badge Superhost e le nostre 500+ recensioni per far schizzare in cima alle classifiche il tuo annuncio.</p>
                 </div>
             </div>
-            <button class="mt-16 px-12 py-5 bg-brand-black text-white hover:bg-brand-gold hover:text-brand-black transition-all font-bold uppercase tracking-widest">Richiedi una consulenza gratuita</button>
+            <a href="#contatti" class="inline-block mt-16 px-12 py-5 bg-brand-black text-white hover:bg-brand-gold hover:text-brand-black transition-all font-bold uppercase tracking-widest shadow-lg">Scopri quanto puoi guadagnare</a>
         </div>
     </section>
+
+    <section id="contatti" class="py-24 bg-brand-black relative">
+        <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at center, #D4AF37 0%, transparent 50%);"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10" data-aos="fade-up">
+            <div class="bg-neutral-900 border border-brand-gold/30 p-8 md:p-14 shadow-2xl relative overflow-hidden">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Iniziamo un percorso insieme.</h2>
+                    <p class="text-gray-400 font-light">Compila il modulo per ricevere una valutazione gratuita del tuo immobile o per richiedere informazioni sui nostri soggiorni. Ti risponderemo entro 24 ore.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Nome e Cognome *</label>
+                            <input type="text" required class="form-input" placeholder="Mario Rossi">
+                        </div>
+                        <div>
+                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Indirizzo E-mail *</label>
+                            <input type="email" required class="form-input" placeholder="mario@email.com">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Numero di Telefono *</label>
+                            <input type="tel" required class="form-input" placeholder="+39 333 123 4567">
+                        </div>
+                        <div>
+                            <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Cosa desideri fare? *</label>
+                            <select required class="form-input bg-neutral-900 appearance-none cursor-pointer">
+                                <option value="" disabled selected>Seleziona un'opzione...</option>
+                                <option value="proprietario">Voglio affidarvi la gestione del mio immobile</option>
+                                <option value="ospite">Voglio prenotare un soggiorno in un appartamento</option>
+                                <option value="altro">Altre informazioni</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-brand-gold text-[10px] uppercase tracking-widest mb-1">Parlaci del tuo immobile o delle tue date di viaggio</label>
+                        <textarea rows="4" class="form-input resize-none" placeholder="Es. Ho un trilocale a Ostia fronte mare / Vorrei prenotare Rugiada ad Agosto..."></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-brand-gold text-brand-black font-bold uppercase text-sm tracking-widest py-5 hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
+                            Invia Richiesta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 text-center border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-serif text-white tracking-widest uppercase mb-4">Amico<span class="text-brand-gold">Home</span></h2>
+            <p class="text-gray-500 text-xs mb-6">Property Management & Luxury Stays in Ostia, Roma.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Airbnb</a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Facebook</a>
+            </div>
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest">© 2026 adiretreas. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -242,6 +309,7 @@
     <script>
         AOS.init({ once: true, duration: 1000 });
         
+        // Cambio stile header allo scroll
         window.onscroll = function() {
             let header = document.querySelector('header');
             if (window.pageYOffset > 50) {
@@ -253,6 +321,7 @@
             }
         };
 
+        // Inizializzazione Swiper Interni (Gallerie Appartamenti)
         document.querySelectorAll('.inner-swiper').forEach(function(slider) {
             new Swiper(slider, {
                 nested: true, 
@@ -268,6 +337,7 @@
             });
         });
 
+        // Inizializzazione Swiper Principale
         const mainSwiper = new Swiper('.appartamenti-swiper', {
             slidesPerView: 1,
             spaceBetween: 30,
